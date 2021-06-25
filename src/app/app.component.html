@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for Planets..." (keyup)="searchByEnter($event)" />
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" (click)="serachByBtn()">
+            Search
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="side-nav">
+        <app-filter [filterName]="'shapes'" [filters]="shapes$ | async" (filterEvent)="updateFilter($event)">
+        </app-filter>
+        <app-filter [filterName]="'sizes'" [filters]="sizes$ | async" (filterEvent)="updateFilter($event)"></app-filter>
+        <app-filter [filterName]="'colors'" [filters]="colors$ | async" (filterEvent)="updateFilter($event)">
+        </app-filter>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="main">
+        <app-planets></app-planets>
+      </div>
+    </div>
+  </div>
+</div>

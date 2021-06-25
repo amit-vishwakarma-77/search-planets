@@ -1,0 +1,9 @@
+<div>
+    <h1>Planets:</h1>
+    <div *ngFor="let planet of planets$ | async">
+        <h3>{{ planet.name }}</h3>
+    </div>
+    <div *ngIf="(planets$ | async)?.length === 0">
+        <h3>No Planets Found!!</h3>
+    </div>
+</div>

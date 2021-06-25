@@ -1,0 +1,6 @@
+<h3>{{ filterName }}</h3>
+<div *ngFor="let filter of filters">
+    <label >
+        <input type="checkbox" [checked] = "filter.active"  (change) = "getValueOnClick($event,filter.active, filter.id)" > {{filter.name}}
+    </label>
+</div>
